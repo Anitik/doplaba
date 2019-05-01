@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("Введите числа: ");
         for (int i = 0; i < n; i++) {
-            myArray[i] = in.nextInt(); // 2, 2, 2, 5, 5, 5, 5, 5, 5, 6
+            myArray[i] = in.nextInt(); // 2 2 2 5 5 5 5 5 5 6
         }
 
         for (int i = 0; i < n - 1; i++) {
@@ -74,7 +74,7 @@ public class Main {
         int time[] = {10, 11, 12, 13, 14, 15, 16, 17, 18};
         int count[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-        System.out.println("Музей работает с 11 до 18 часов. Время вводится целыми числами.");
+        System.out.println("Музей работает с 10 до 18 часов. Время вводится целыми числами.");
         for (int i = 0; i < m; i++) {
             System.out.println("Введите время прихода и ухода " + (i + 1) + "-го посетителя:");
             people[i][0] = in.nextInt();
@@ -142,6 +142,7 @@ public class Main {
         }
 
 
+        System.out.println();
         System.out.println("-ЗАДАЧА 17-");
 
         /*Вводиться послідовність з n натуральних чисел.
@@ -149,7 +150,7 @@ public class Main {
 
 
         System.out.println("Введите количество чисел: ");
-        int g = in.nextInt();
+        int g = in.nextInt(); // 100
         int ar[] = new int[g];
         for (int i = 0; i < ar.length; i++) {
             ar[i] = (int) ((Math.random() * 99) + 1);
@@ -162,10 +163,11 @@ public class Main {
                 min = ar[i];
             }
         }
-        System.out.println("min=" + min);
+        System.out.println();
+        System.out.println("Минимальное число даной последовательности: " + min);
         for (int i = 1; i < min; i++) {
             if (i != min) {
-                System.out.println("Минимальное натуральное число которого нет:" + i);
+                System.out.println("Минимальное натуральное число которого нет в даной последовательности: " + i);
                 break;
 
 
