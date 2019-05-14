@@ -1,7 +1,6 @@
 package com.company;
 
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Main {
@@ -18,8 +17,8 @@ public class Main {
         int n = in.nextInt(); // 10
         int k = 0, j = 0;
         int[] myArray = new int[n];
-        StringBuilder s = new StringBuilder("");
-        StringBuilder s2 = new StringBuilder("");
+        StringBuilder s = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
 
         System.out.println("Введите числа: ");
         for (int i = 0; i < n; i++) {
@@ -30,7 +29,7 @@ public class Main {
 
             if (myArray[i + 1] % myArray[i] == 0) {
 
-                s.append(myArray[i + 1] + " ");
+                s.append(myArray[i + 1]).append(" ");
                 k++;
 
                 if (myArray[i + 1] == myArray[myArray.length - 1]) {
@@ -70,9 +69,9 @@ public class Main {
 
         System.out.println("Введите количество посетителей: ");
         int m = in.nextInt(); // 10
-        int people[][] = new int[m][2];
-        int time[] = {10, 11, 12, 13, 14, 15, 16, 17, 18};
-        int count[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[][] people = new int[m][2];
+        int[] time = {10, 11, 12, 13, 14, 15, 16, 17, 18};
+        int[] count = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
         System.out.println("Музей работает с 10 до 18 часов. Время вводится целыми числами.");
         for (int i = 0; i < m; i++) {
@@ -126,7 +125,7 @@ public class Main {
         System.out.println("Введите длину массива: ");
         int b;
         b = in.nextInt();
-        int arr[] = new int[b];
+        int[] arr = new int[b];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
             System.out.print(arr[i] + " ");
@@ -136,8 +135,8 @@ public class Main {
         System.out.println("Введите k: ");
         int e = in.nextInt();
         moveRight(arr, e);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int i1 : arr) {
+            System.out.print(i1 + " ");
 
         }
 
@@ -151,16 +150,16 @@ public class Main {
 
         System.out.println("Введите количество чисел: ");
         int g = in.nextInt(); // 100
-        int ar[] = new int[g];
+        int[] ar = new int[g];
         for (int i = 0; i < ar.length; i++) {
             ar[i] = (int) ((Math.random() * 99) + 1);
             System.out.print(ar[i] + " ");
 
         }
         int min = ar[0];
-        for (int i = 0; i < ar.length; i++) {
-            if (ar[i] < min) {
-                min = ar[i];
+        for (int i1 : ar) {
+            if (i1 < min) {
+                min = i1;
             }
         }
         System.out.println();
@@ -173,9 +172,38 @@ public class Main {
 
             }
         }
+
+
+        System.out.println("-ЗАДАЧА 19-");
+
+        int q, w, u, r, t, y;
+        int number =0;
+        for(q=0;q<10;q++){
+            for(w=0;w<10;w++){
+                for(u=0;u<10;u++){
+                    for(r=0;r<10;r++){
+                        for(t=0;t<10;t++){
+                            for(y=0;y<10;y++){
+                                if (q+w+u==r+t+y){
+                                    number+=1;
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+        System.out.println("Количество шестизначных счастливых билетов : "+number);
     }
 
-    public static void moveRight(int[] array, int positions) {
+
+
+    private static void moveRight(int[] array, int positions) {
         int size = array.length;
         for (int i = 0; i < positions; i++) {
             int temp = array[size - 1];
@@ -186,4 +214,8 @@ public class Main {
         }
 
     }
+
+
+
+
 }
