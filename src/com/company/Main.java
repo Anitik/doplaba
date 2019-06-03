@@ -177,15 +177,15 @@ public class Main {
         System.out.println("-ЗАДАЧА 19-");
 
         int q, w, u, r, t, y;
-        int number =0;
-        for(q=0;q<10;q++){
-            for(w=0;w<10;w++){
-                for(u=0;u<10;u++){
-                    for(r=0;r<10;r++){
-                        for(t=0;t<10;t++){
-                            for(y=0;y<10;y++){
-                                if (q+w+u==r+t+y){
-                                    number+=1;
+        int number = 0;
+        for (q = 0; q < 10; q++) {
+            for (w = 0; w < 10; w++) {
+                for (u = 0; u < 10; u++) {
+                    for (r = 0; r < 10; r++) {
+                        for (t = 0; t < 10; t++) {
+                            for (y = 0; y < 10; y++) {
+                                if (q + w + u == r + t + y) {
+                                    number += 1;
                                 }
 
                             }
@@ -198,8 +198,71 @@ public class Main {
 
             }
         }
-        System.out.println("Количество шестизначных счастливых билетов : "+number);
-    }
+        System.out.println("Количество шестизначных счастливых билетов : " + number);
+
+
+
+    System.out.println("-Буфет-");
+
+        int P=0, S=0,  Time=300, KS=0;
+        int p=(int) (Math.random()*(10)+1) ;
+        int students=(int) (Math.random()*(20)+1) ;
+        System.out.println("Перемена длится 5 минут.");
+        System.out.println("В столовую заходят преподователи:");
+        int [] tp=new int[p];
+        for (int i = 0; i < tp.length; i++) {
+            tp[i] = ((int)(Math.random() * 20 + 10)); // от 10 до 30 сек
+            try {
+                Thread.sleep(500);
+            } catch (Exception ee) {}
+            System.out.print("(¬‿¬)"+tp[i]+" ");
+        }
+        System.out.println("");
+        System.out.println("В столовую заходят студенты:");
+        int [] ts=new int[students];
+        for (int i = 0; i < ts.length; i++) {
+            ts[i] = ((int)(Math.random() * 20 + 10)); // от 10 до 30 сек
+            try {
+                Thread.sleep(500);
+            } catch (Exception ee) {}
+            System.out.print("(-_・)"+ts[i]+" ");
+        }
+        System.out.println("");
+        System.out.println("Перемена закончилась. ");
+        System.out.println("B столовую пришло "+p+" преподователя(-ей) и "+s+" студента(-ов).");
+        for( int i=0; i<p; i++){
+            P+=tp[i];
+        }
+        Time-=P;
+        System.out.println("Время обслуживания преподователей: " + P + " сек.");
+        System.out.println("Столовая успела обслужить всех преподователей.");
+
+
+
+        for( int i=0; i<students; i++){
+            S+=ts[i];
+
+            if (S>=Time){
+                KS=i+1;
+                break;
+
+            }
+            KS=i+1;
+        }
+
+        System.out.println("Время обслуживания студентов: " + (S) + " сек.");
+        if (KS<students) {
+            System.out.println("Столовая успела обслужить " + KS + " студента(-ов).");
+            System.out.println(KS + " студента(-ов) остались голодными. ");
+            for (int i=0; i<KS; i++){
+                System.out.print("(T_T) ");
+            }
+
+        }
+        else {
+            System.out.println("Столовая успела обслужить всех студентов.");
+        }
+}
 
 
 
